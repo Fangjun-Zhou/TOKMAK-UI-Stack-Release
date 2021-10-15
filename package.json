@@ -1,0 +1,16 @@
+{
+  "name": "com.fintokmak.tokmakuistack",
+  "version": "0.1.1",
+  "displayName": "TOKMAK UI Stack",
+  "description": "This is stack based UI management system developed by FinTOKMAK Studio.",
+  "unity": "2020.3",
+  "unityRelease": "0b5",
+  "license": "AGPL-3.0",
+  "dependencies": {},
+  "keywords": [],
+  "author": "FinTOKMAK Studio <fangjun.zhou02@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
