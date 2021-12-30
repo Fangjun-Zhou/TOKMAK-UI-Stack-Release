@@ -4,7 +4,10 @@
     "references": [
         "NaughtyAttributes.Core",
         "UnityInterfaceSupport",
-        "SerializableDict.Runtime"
+        "SerializableDict.Runtime",
+        "FinTOKMAK.EventSystem.Runtime",
+        "com.hextantstudios.utilities",
+        "Hextant Utilities"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -4,7 +4,11 @@
     "references": [
         "FinTOKMAK.UIStackSystem.Runtime",
         "NaughtyAttributes.Core",
-        "SerializableDict.Runtime"
+        "SerializableDict.Runtime",
+        "com.hextantstudios.utilities",
+        "Hextant Utilities",
+        "FinTOKMAK.EventSystem.Runtime",
+        "FinTOKMAK.EventSystem.Editor"
     ],
     "includePlatforms": [
         "Editor"

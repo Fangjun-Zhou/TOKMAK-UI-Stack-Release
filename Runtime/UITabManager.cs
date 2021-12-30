@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace FinTOKMAK.UIStackSystem.Runtime
@@ -15,12 +16,12 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         
         public void SwitchPanel(IUIPanelElement panel)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public async Task SwitchPanelAsync(IUIPanelElement panel)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         #endregion
