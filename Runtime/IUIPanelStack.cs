@@ -1,5 +1,8 @@
 ﻿namespace FinTOKMAK.UIStackSystem.Runtime
 {
+    /// <summary>
+    /// The UI Stack interface.
+    /// </summary>
     public interface IUIPanelStack
     {
         /// <summary>
