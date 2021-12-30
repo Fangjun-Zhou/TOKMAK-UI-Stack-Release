@@ -29,6 +29,9 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         [BoxGroup("Panel Property")]
         public string panelName;
         
+        /// <summary>
+        /// All the listeners current UIPanelElement is listening to.
+        /// </summary>
         [BoxGroup("UI Finish Listeners")]
         [ReorderableList]
         public List<UIStackEventListener> listeners;
