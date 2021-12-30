@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -20,7 +21,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         /// The root manager of current UIPanelElement
         /// </summary>
         [BoxGroup("Panel Property")]
-        public UIStackManager panelRootManager;
+        public UIManager panelRootManager;
 
         /// <summary>
         /// The name of current UIPanelElement
@@ -102,7 +103,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             throw new NotImplementedException();
         }
 
-        public async void OnActive2BackgroundAsync()
+        public async Task OnActive2BackgroundAsync()
         {
             throw new NotImplementedException();
         }
@@ -112,7 +113,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             throw new NotImplementedException();
         }
 
-        public async void OnActive2InactiveAsync()
+        public async Task OnActive2InactiveAsync()
         {
             throw new NotImplementedException();
         }
@@ -122,7 +123,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             throw new NotImplementedException();
         }
 
-        public async void OnBackground2InactiveAsync()
+        public async Task OnBackground2InactiveAsync()
         {
             throw new NotImplementedException();
         }

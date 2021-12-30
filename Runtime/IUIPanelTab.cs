@@ -1,4 +1,6 @@
-﻿namespace FinTOKMAK.UIStackSystem.Runtime
+﻿using System.Threading.Tasks;
+
+namespace FinTOKMAK.UIStackSystem.Runtime
 {
     /// <summary>
     /// The UI Tab interface.
@@ -15,6 +17,7 @@
         /// The async method to switch a panel.
         /// </summary>
         /// <param name="panel">the panel to switch.</param>
-        void SwitchPanelAsync(IUIPanelElement panel);
+        /// <returns>async Task</returns>
+        Task SwitchPanelAsync(IUIPanelElement panel);
     }
 }

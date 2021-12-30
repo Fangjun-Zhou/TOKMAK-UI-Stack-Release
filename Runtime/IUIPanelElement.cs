@@ -1,4 +1,6 @@
-﻿namespace FinTOKMAK.UIStackSystem.Runtime
+﻿using System.Threading.Tasks;
+
+namespace FinTOKMAK.UIStackSystem.Runtime
 {
     /// <summary>
     /// The interface that defines the basic lifecycle of a UIPanelElement.
@@ -28,7 +30,8 @@
         /// <summary>
         /// The async callback function called when the panel change from Active state to Background state.
         /// </summary>
-        void OnActive2BackgroundAsync();
+        /// <returns>async Task</returns>
+        Task OnActive2BackgroundAsync();
 
         /// <summary>
         /// The callback function called when the panel change from Active state to Inactive state.
@@ -38,7 +41,8 @@
         /// <summary>
         /// The async callback function called when the panel changed from Active state to Inactive state.
         /// </summary>
-        void OnActive2InactiveAsync();
+        /// <returns>async Task</returns>
+        Task OnActive2InactiveAsync();
 
         /// <summary>
         /// The callback function called when the panel changed from the Background state to Inactive state.
@@ -48,6 +52,7 @@
         /// <summary>
         /// The async callback function called when the panel changed from Background state to Inactive state.
         /// </summary>
-        void OnBackground2InactiveAsync();
+        /// <returns>async Task</returns>
+        Task OnBackground2InactiveAsync();
     }
 }
