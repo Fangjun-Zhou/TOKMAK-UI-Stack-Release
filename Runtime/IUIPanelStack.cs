@@ -8,13 +8,25 @@
         /// <summary>
         /// The method to open a panel.
         /// </summary>
-        /// <param name="panelElement">the panel to open</param>
+        /// <param name="panelElement">the panel to open.</param>
         void OpenPanel(IUIPanelElement panelElement);
+
+        /// <summary>
+        /// The async method to open a panel.
+        /// </summary>
+        /// <param name="panelElement">the panel to open.</param>
+        void OpenPanelAsync(IUIPanelElement panelElement);
 
         /// <summary>
         /// The method to close a panel.
         /// </summary>
         /// <param name="panelElement">the panel to close.</param>
         void ClosePanel(IUIPanelElement panelElement);
+
+        /// <summary>
+        /// The async method to close a panel.
+        /// </summary>
+        /// <param name="panelElement">the panel to close.</param>
+        void ClosePanelAsync(IUIPanelElement panelElement);
     }
 }
