@@ -1,9 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 namespace FinTOKMAK.UIStackSystem.Runtime
 {
-    public class UITabManager : MonoBehaviour, IUIPanelTab
+    public class UITabManager : UIManager, IUIPanelTab
     {
+        #region Private Field
+
+        // TODO: Use some private data structure to manage the panel tabs.
+
+        #endregion
+        
         #region IUITabManager Callback
         
         public void SwitchPanel(IUIPanelElement panel)
@@ -11,7 +18,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             throw new System.NotImplementedException();
         }
 
-        public async void SwitchPanelAsync(IUIPanelElement panel)
+        public async Task SwitchPanelAsync(IUIPanelElement panel)
         {
             throw new System.NotImplementedException();
         }
