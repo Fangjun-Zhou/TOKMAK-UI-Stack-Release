@@ -12,7 +12,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
     /// All the UI panel logic class should inherit this class
     /// </summary>
     [AddComponentMenu("FinTOKMAK/UI Stack System/UI Panel Element")]
-    public class UIPanelElement : MonoBehaviour, IUIStackEventInvoker
+    public class UIPanelElement : MonoBehaviour, IUIStackEventInvoker, IUIPanelElement
     {
         #region Public Field
 
@@ -80,71 +80,51 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             }
         }
 
-        #region UI Stack Callback Methods
+        #region IUIPanelElement Callback
 
-        /// <summary>
-        /// This method will be called when the UIPanelElement is pushed into the UI Stack
-        /// </summary>
-        public virtual void OnPush()
+        public void OnInactive2Active()
         {
-            pushEvent?.Invoke();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// This method will be called when the UIPanelElement is popped out from the UI Stack
-        /// </summary>
-        public virtual void OnPop()
+        public void OnInactive2Background()
         {
-            popEvent?.Invoke();
-            
-            // Check the finish event
-            FinishCheck();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// This method will be called when the UIPanelElement finish the pop state
-        /// and new panel will be resumed
-        /// </summary>
-        public virtual void OnFinishPop()
+        public void OnBackground2Active()
         {
-            finishPopEvent?.Invoke();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// This method will be called when the UIPanelElement is paused
-        /// To be specific, when current UIPanelElement is on the top of the UI Stack,
-        /// the UIPanelElement is not paused
-        /// When there's a new UIPanelElement pushed into the stack and current is no longer at the top of the stack,
-        /// OnPause callback method will be called
-        /// </summary>
-        public virtual void OnPause()
+        public void OnActive2Background()
         {
-            pauseEvent?.Invoke();
-            
-            // Check the finish event
-            FinishCheck();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// This method will be called when the UIPanelElement finish the pause state
-        /// and new panel will be pushed into the stack
-        /// </summary>
-        public virtual void OnFinishPause()
+        public async void OnActive2BackgroundAsync()
         {
-            finishPauseEvent?.Invoke();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// This method will be called when the UIPanelElement is resumed
-        /// To be specific, when current UIPanelElement is not on the top of the UI Stack,
-        /// the UIPanelElement is paused
-        /// When the UIPanelElement on top of current panel is popped out,
-        /// and current UIPanelElement is on the top of the stack,
-        /// OnResume callback method will be called
-        /// </summary>
-        public virtual void OnResume()
+        public void OnActive2Inactive()
         {
-            resumeEvent?.Invoke();
+            throw new NotImplementedException();
+        }
+
+        public async void OnActive2InactiveAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnBackground2Inactive()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async void OnBackground2InactiveAsync()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
