@@ -4,7 +4,7 @@ using Hextant;
 
 namespace FinTOKMAK.UIStackSystem.Runtime.UIStackEvent
 {
-    public class UIStackManager: UniversalEventManager
+    public class UIStackEventManager: UniversalEventManager
     {
         public override UniversalEventConfig GetEventConfig()
         {
