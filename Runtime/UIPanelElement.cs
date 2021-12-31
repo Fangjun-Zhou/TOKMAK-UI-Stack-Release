@@ -97,6 +97,16 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         
         #endregion
 
+        #region Hide Public Field
+
+        public PanelState state
+        {
+            get => _state;
+            set => _state = value;
+        }
+
+        #endregion
+
         #region Private Field
 
         /// <summary>
