@@ -11,7 +11,17 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         // TODO: Use some private data structure to manage the panel tabs.
 
         #endregion
-        
+
+        private void Awake()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Start()
+        {
+            throw new NotImplementedException();
+        }
+
         #region IUITabManager Callback
         
         public void SwitchPanel(IUIPanelElement panel)

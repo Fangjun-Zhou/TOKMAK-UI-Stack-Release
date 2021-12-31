@@ -29,6 +29,11 @@ namespace FinTOKMAK.UIStackSystem.Runtime
 
         #endregion
 
+        private void Awake()
+        {
+            throw new NotImplementedException();
+        }
+
         private void Start()
         {
             
