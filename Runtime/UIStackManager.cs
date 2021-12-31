@@ -15,9 +15,9 @@ namespace FinTOKMAK.UIStackSystem.Runtime
     public class UIStackManager : UIManager, IUIPanelStack
     {
         #region Public Field
-        
-        
-        
+
+
+
         #endregion
 
         #region Private Field
@@ -25,13 +25,19 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         /// <summary>
         /// The internal UI Stack
         /// </summary>
-        private Stack<IUIPanelElement> _UIStack = new Stack<IUIPanelElement>();
+        private Stack<IUIPanelElement> _UIStack;
+
+        /// <summary>
+        /// A dummy head for internal UI Stack
+        /// </summary>
+        private UIPanelElement _UIHead;
 
         #endregion
 
         private void Awake()
         {
-            throw new NotImplementedException();
+            _UIHead = new UIPanelElement();
+            _UIStack = new Stack<IUIPanelElement>();
         }
 
         private void Start()
