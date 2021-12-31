@@ -25,7 +25,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         /// <returns>if the panel is valid</returns>
         private bool IsPanelValid(UIPanelElement panelElement)
         {
-            if (rootPanel == null || panelElement == null || !rootPanel.panelRootManager.UIPanels.ContainsKey(panelElement))
+            if (rootPanel == null || panelElement == null || !rootPanel.panelRootManager.UIPanels.Contains(panelElement))
             {
                 return false;
             }

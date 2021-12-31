@@ -1,13 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace FinTOKMAK.UIStackSystem.Runtime
 {
-    /// <summary>
-    /// The SerializableDictionary that has int value as keys and UIPanelElements as values
-    /// </summary>
-    [System.Serializable]
-    public class UIPanelElementStringDict : SerializableDictionary<UIPanelElement, string>{}
-    
+
     /// <summary>
     /// The base class for all the UIManagers, including StackManager and TabManager.
     /// </summary>
@@ -18,7 +14,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         /// </summary>
         [Tooltip("This field list all the UIPanelElement children. " +
                  "The key is panel name and value is UIPanelElement MonoBehaviour.")]
-        public UIPanelElementStringDict UIPanels;
+        public List<UIPanelElement> UIPanels;
 
         /// <summary>
         /// if the UIStackManager has an initialization panel
