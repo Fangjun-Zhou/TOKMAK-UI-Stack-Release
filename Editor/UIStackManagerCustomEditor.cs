@@ -41,12 +41,17 @@ namespace Package.Editor
 
             EditorGUILayout.LabelField("UI Panels", EditorStyles.boldLabel);
             
-            
+            EditorGUI.BeginChangeCheck();
             EditorGUILayout.BeginVertical("Box");
             {
                 EditorGUILayout.PropertyField(_uiPanels);
             }
             EditorGUILayout.EndVertical();
+            if (EditorGUI.EndChangeCheck())
+            {
+                // Assign current manager to all the panels.
+                UpdatePanelRoot();
+            }
                 
             serializedObject.ApplyModifiedProperties();
 
@@ -101,6 +106,17 @@ namespace Package.Editor
             else
             {
                 _containInitializationPanel = true;
+            }
+        }
+
+        /// <summary>
+        /// Call this method to update the root manager of all the panel managed by current manager.
+        /// </summary>
+        private void UpdatePanelRoot()
+        {
+            foreach (UIPanelElement panel in _stackManager.UIPanels)
+            {
+                panel.panelRootManager = _stackManager;
             }
         }
     }
