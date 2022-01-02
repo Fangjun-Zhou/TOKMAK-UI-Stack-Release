@@ -6,11 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.1] - 2021-07-15
+## 0.1.1 - 2021-07-15
 ### Fixed
 - Fixed the asmdef target platform and update dependent package
 
-## [0.1.0] - 2021-07-02
+## 0.1.0 - 2021-07-02
 ### Added
 - A UIPanelChild class for all the children in a panel to get access to the panel itself.
 - Added IUIStackEventInvoker interface for UI element invoke finish event.
@@ -27,26 +27,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Check if the panel is null when resume, solve the null reference error.
 
-## [0.0.3] - 2021-06-30
+## 0.0.3 - 2021-06-30
 ### Fixed
 - Added Assembly Definition
 
-## [0.0.2] - 2021-06-30
+## 0.0.2 - 2021-06-30
 ### Added
 - Finish LICENSE
 
 ### Changed
 - Changed the required Unity version in package.json
 
-## [0.0.1] - 2021-06-29
+## 0.0.1 - 2021-06-29
 ### Added
 - Initialize the UI Stack System Repository.
 - Added UnityEvent to the UIPanelElement base class.
 Developers can use it to handle panel logic.
 
-[Unreleased]: https://github.com/Fangjun-Zhou/Unity-UI-Stack-System
-[0.1.1]: https://github.com/Fangjun-Zhou/Unity-UI-Stack-System/releases/tag/uistacksystem-0.1.1
-[0.1.0]: https://github.com/Fangjun-Zhou/Unity-UI-Stack-System/releases/tag/uistacksystem-0.1.0
-[0.0.3]: https://github.com/Fangjun-Zhou/Unity-UI-Stack-System/releases/tag/uistacksystem-0.0.3
-[0.0.2]: https://github.com/Fangjun-Zhou/Unity-UI-Stack-System/releases/tag/uistacksystem-0.0.2
-[0.0.1]: https://github.com/Fangjun-Zhou/Unity-UI-Stack-System/releases/tag/uistacksystem-0.0.1
+[Unreleased]: https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack-Release
