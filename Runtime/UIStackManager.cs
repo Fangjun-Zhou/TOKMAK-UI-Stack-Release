@@ -32,24 +32,31 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         /// </summary>
         private UIPanelElement _UIHead;
 
+        private UIPanelElement _top;
+
         #endregion
 
         private void Awake()
         {
+            /// Initialization for UI stack
             _UIHead = new UIPanelElement();
             _UIStack = new Stack<IUIPanelElement>();
+     
         }
+
 
         private void Start()
         {
-            
+            /// Initialization for UI stack and creates a dummy head
+            _UIStack.Push(_UIHead);
+            _UIStack.
         }
 
         #region UIStack Operation
 
         public void OpenPanel(IUIPanelElement panelElement)
         {
-            throw new NotImplementedException();
+            
         }
 
         public async Task OpenPanelAsync(IUIPanelElement panelElement)
