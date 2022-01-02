@@ -42,7 +42,7 @@ namespace Package.Editor
         {
             var window = GetWindow<UIAnimationEventEditor>();
             window.titleContent = new GUIContent("UI Animation Event Editor");
-            window.minSize = new Vector2(100, 250);
+            window.minSize = new Vector2(200, 250);
             window.Show();
         }
 
@@ -57,18 +57,50 @@ namespace Package.Editor
 
         private void OnGUI()
         {
+            if (_window == null)
+            {
+                UpdateWorkingTarget();
+            }
+
+            if (_clip == null)
+            {
+                EditorGUILayout.HelpBox("No clip!", MessageType.Warning);
+                if (GUILayout.Button("Update Clip"))
+                {
+                    UpdateWorkingTarget();
+                }
+                return;
+            }
+            
+            GUILayout.Label($"Working Clip: {_clip.name}", EditorStyles.boldLabel);
+
+            if (GUILayout.Button("Update"))
+            {
+                UpdateWorkingTarget();
+            }
+            
+            EditorGUILayout.Space();
+            
             EditorGUILayout.BeginVertical("Box");
             
             foreach (string displayName in _animEventTable.Keys)
             {
                 if (GUILayout.Button(displayName))
                 {
+                    UpdateWorkingTarget();
+
+                    if (_window == null || _clip == null)
+                    {
+                        return;
+                    }
+                    
                     List<AnimationEvent> events = AnimationUtility.GetAnimationEvents(_clip).ToList();
                     events.Add(new AnimationEvent()
                     {
                         time = _time,
                         functionName = _animEventTable[displayName]
                     });
+                    AnimationUtility.SetAnimationEvents(_clip, events.ToArray());
                 }
             }
             
