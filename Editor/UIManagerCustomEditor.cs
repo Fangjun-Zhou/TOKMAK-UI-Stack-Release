@@ -6,12 +6,11 @@ using UnityEngine;
 
 namespace Package.Editor
 {
-    [CustomEditor(typeof(UIStackManager))]
     public class UIStackManagerCustomEditor : UnityEditor.Editor
     {
         #region Private Field
 
-        private UIStackManager _stackManager;
+        private UIManager _stackManager;
 
         #region Serializaed Property
 
@@ -26,7 +25,7 @@ namespace Package.Editor
 
         private void OnEnable()
         {
-            _stackManager = (UIStackManager) serializedObject.targetObject;
+            _stackManager = (UIManager) serializedObject.targetObject;
 
             _uiPanels = serializedObject.FindProperty("UIPanels");
             _initializationPanel = serializedObject.FindProperty("initializationPanel");
