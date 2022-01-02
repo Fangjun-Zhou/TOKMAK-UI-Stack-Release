@@ -4,7 +4,7 @@ using FinTOKMAK.UIStackSystem.Runtime;
 using UnityEditor;
 using UnityEngine;
 
-namespace Package.Editor
+namespace FinTOKMAK.UIStackSystem.Editor
 {
     public class UIManagerCustomEditor : UnityEditor.Editor
     {

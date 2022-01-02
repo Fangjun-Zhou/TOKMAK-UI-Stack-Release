@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Package.Editor
+namespace FinTOKMAK.UIStackSystem.Editor
 {
     public class UIAnimationEventEditor : EditorWindow
     {
