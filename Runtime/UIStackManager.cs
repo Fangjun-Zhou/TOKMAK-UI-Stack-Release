@@ -49,7 +49,6 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         {
             /// Initialization for UI stack and creates a dummy head
             _UIStack.Push(_UIHead);
-            _UIStack.
         }
 
         #region UIStack Operation
