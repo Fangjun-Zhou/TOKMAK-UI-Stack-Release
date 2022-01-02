@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Package.Editor
 {
-    public class UIStackManagerCustomEditor : UnityEditor.Editor
+    public class UIManagerCustomEditor : UnityEditor.Editor
     {
         #region Private Field
 
@@ -118,5 +118,17 @@ namespace Package.Editor
                 panel.panelRootManager = _stackManager;
             }
         }
+    }
+    
+    [CustomEditor(typeof(UIStackManager))]
+    public class UIStackManagerCustomEditor: UIManagerCustomEditor
+    {
+        
+    }
+    
+    [CustomEditor(typeof(UITabManager))]
+    public class UITabManagerCustomEditor : UIManagerCustomEditor
+    {
+        
     }
 }
