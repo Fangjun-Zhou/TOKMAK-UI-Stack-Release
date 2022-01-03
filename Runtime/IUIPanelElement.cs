@@ -8,6 +8,11 @@ namespace FinTOKMAK.UIStackSystem.Runtime
     public interface IUIPanelElement
     {
         /// <summary>
+        /// The current state of IUIPanelElement
+        /// </summary>
+        PanelState state { get; set; }
+        
+        /// <summary>
         /// The callback function called when the panel change from Inactive state to Active state.
         /// </summary>
         void OnInactive2Active();
