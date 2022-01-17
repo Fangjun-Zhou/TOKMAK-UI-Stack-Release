@@ -7,28 +7,19 @@ namespace FinTOKMAK.UIStackSystem.Runtime
     public interface IUINode
     {
         /// <summary>
-        /// Get the next node
+        /// The next node.
         /// </summary>
-        /// <returns></returns>
-        IUINode GetNext();
+        IUINode next { get; set; }
+        
+        /// <summary>
+        /// The previous node.
+        /// </summary>
+        IUINode prev { get; set; }
 
         /// <summary>
-        /// Get the previous node
+        /// The value of the node.
         /// </summary>
-        /// <returns></returns>
-        IUINode GetPrev();
-
-        /// <summary>
-        /// Set current node's value
-        /// </summary>
-        /// <param name="value"></param>
-        void SetVal(UIPanelElement value);
-
-        /// <summary>
-        /// Get current node's value
-        /// </summary>
-        /// <returns></returns>
-        UIPanelElement GetVal();
+        UIPanelElement value { get; set; }
     }
 }
 

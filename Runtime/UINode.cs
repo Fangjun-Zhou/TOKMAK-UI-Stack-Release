@@ -9,59 +9,36 @@ namespace FinTOKMAK.UIStackSystem.Runtime
     {
 
         #region Private Field
-        /// <summary>
-        /// value stored in current node
-        /// </summary>
-        UIPanelElement value = null;
 
-        /// <summary>
-        /// linked next node
-        /// </summary>
-        UINode next = null;
+        private IUINode _next;
 
-        /// <summary>
-        /// linked previous node
-        /// </summary>
-        UINode prev = null;
+        private IUINode _prev;
+
+        private UIPanelElement _value;
+        
         #endregion
 
+        #region Public Field
 
-        /// <summary>
-        /// Get the next node
-        /// </summary>
-        /// <returns></returns>
-        public IUINode GetNext()
+        public IUINode next
         {
-            throw new System.NotImplementedException();
+            get => _next;
+            set => _next = value;
+        }
+        
+        public IUINode prev
+        {
+            get => _prev;
+            set => prev = value;
         }
 
-        /// <summary>
-        /// Get the previous node
-        /// </summary>
-        /// <returns></returns>
-        public IUINode GetPrev()
+        public UIPanelElement value
         {
-            throw new System.NotImplementedException();
+            get => _value;
+            set => _value = value;
         }
 
-        /// <summary>
-        /// Set current node's value
-        /// </summary>
-        /// <param name="value"></param>
-        public void SetVal(UIPanelElement value)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        /// <summary>
-        /// Get current node's value
-        /// </summary>
-        /// <returns></returns>
-        public UIPanelElement GetVal()
-        {
-            throw new System.NotImplementedException();
-        }
-
+        #endregion
     }
 }
 
