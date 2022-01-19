@@ -77,6 +77,8 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         public List<UIEventListener> active2InactiveListeners = new List<UIEventListener>();
 
         [BoxGroup("UI Stack Event")]
+        public UnityEvent panelInitialize;
+        [BoxGroup("UI Stack Event")]
         public UnityEvent inactive2ActiveEvent;
         [BoxGroup("UI Stack Event")]
         public UnityEvent inactive2BackgroundEvent;
@@ -99,11 +101,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
 
         #region Hide Public Field
 
-        public PanelState state
-        {
-            get => _state;
-            set => _state = value;
-        }
+        public PanelState state => _state;
 
         #endregion
 
@@ -297,6 +295,12 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         #endregion
 
         #region IUIPanelElement Callback
+
+        public void OnInitialization()
+        {
+            _state = PanelState.Inactive;
+            panelInitialize?.Invoke();
+        }
 
         public void OnInactive2Active()
         {

@@ -10,7 +10,12 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         /// <summary>
         /// The current state of IUIPanelElement
         /// </summary>
-        PanelState state { get; set; }
+        PanelState state { get; }
+
+        /// <summary>
+        /// The initialize callback function.
+        /// </summary>
+        void OnInitialization();
         
         /// <summary>
         /// The callback function called when the panel change from Inactive state to Active state.
