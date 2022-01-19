@@ -5,34 +5,34 @@ using UnityEngine;
 
 namespace FinTOKMAK.UIStackSystem.Runtime
 {
-    public class UINode : IUINode
+    public class UINode<T>
     {
 
         #region Private Field
 
-        private IUINode _next;
+        private UINode<T> _next;
 
-        private IUINode _prev;
+        private UINode<T> _prev;
 
-        private UIPanelElement _value;
+        private T _value;
         
         #endregion
 
         #region Public Field
 
-        public IUINode next
+        public UINode<T> next
         {
             get => _next;
             set => _next = value;
         }
         
-        public IUINode prev
+        public UINode<T> prev
         {
             get => _prev;
             set => prev = value;
         }
 
-        public UIPanelElement value
+        public T value
         {
             get => _value;
             set => _value = value;
