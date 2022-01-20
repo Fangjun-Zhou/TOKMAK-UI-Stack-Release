@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 0.2.0 - 2021-07-15
+### Added
+- UI Stack Manager and UI Tab Manager for different UI structure management.
+- Universal Event System for UI event management.
+- New UI Panel life cycle.
+- UI Animation Event Editor for better UI Event editing.
+
 ## 0.1.1 - 2021-07-15
 ### Fixed
 - Fixed the asmdef target platform and update dependent package
