@@ -247,6 +247,8 @@ namespace FinTOKMAK.UIStackSystem.Runtime
                         break;
                 }
                 _top.value.OnBackground2Active();
+                // Update the top index
+                _topIndex = _uiPanelIndex[_top.value];
             }
             else
             {
@@ -282,6 +284,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
                         break;
                 }
                 _top.value.OnBackground2Active();
+                _topIndex = _uiPanelIndex[_top.value];
             }
             else
             {
