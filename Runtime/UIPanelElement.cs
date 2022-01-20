@@ -78,23 +78,23 @@ namespace FinTOKMAK.UIStackSystem.Runtime
 
         [BoxGroup("UI Stack Event")]
         public UnityEvent panelInitialize;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Ascending Event")]
         public UnityEvent inactive2ActiveEvent;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Ascending Event")]
         public UnityEvent inactive2BackgroundEvent;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Ascending Event")]
         public UnityEvent background2ActiveEvent;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Descending Event")]
         public UnityEvent active2BackgroundEvent;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Descending Event")]
         public UnityEvent finishActive2BackgroundEvent;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Descending Event")]
         public UnityEvent background2InactiveEvent;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Descending Event")]
         public UnityEvent finishBackground2InactiveEvent;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Descending Event")]
         public UnityEvent active2InactiveEvent;
-        [BoxGroup("UI Stack Event")]
+        [BoxGroup("Descending Event")]
         public UnityEvent finishActive2InactiveEvent;
         
         #endregion
@@ -132,10 +132,6 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             RegisterActive2BackgroundEvents();
             RegisterActive2InactiveEvents();
             RegisterBackground2InactiveEvents();
-            
-            // Default set panel to Inactive
-            _state = PanelState.Inactive;
-            gameObject.SetActive(false);
         }
         
         private void OnEnable()
@@ -190,8 +186,6 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             {
                 eventListener.finishStatus = false;
             }
-
-            _active2BackgroundComplete = new TaskCompletionSource<bool>();
         }
         
         /// <summary>
@@ -239,8 +233,6 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             {
                 eventListener.finishStatus = false;
             }
-
-            _active2InactiveComplete = new TaskCompletionSource<bool>();
         }
         
         /// <summary>
@@ -288,8 +280,6 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             {
                 eventListener.finishStatus = false;
             }
-
-            _background2InactiveComplete = new TaskCompletionSource<bool>();
         }
 
         #endregion
@@ -299,6 +289,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         public void OnInitialization()
         {
             _state = PanelState.Inactive;
+            gameObject.SetActive(false);
             panelInitialize?.Invoke();
         }
 
@@ -356,8 +347,12 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             // Invoke the UnityEvent
             active2BackgroundEvent?.Invoke();
 
-            // Wait all the events finish.
-            await _active2BackgroundComplete.Task;
+            if (!AllActive2BackgroundFinished())
+            {
+                // Wait all the events finish.
+                await _active2BackgroundComplete.Task;
+                _active2BackgroundComplete = new TaskCompletionSource<bool>();
+            }
             
             finishActive2BackgroundEvent?.Invoke();
             
@@ -384,7 +379,11 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             // Invoke the UnityEvent
             active2InactiveEvent?.Invoke();
 
-            await _active2InactiveComplete.Task;
+            if (!AllActive2InactiveFinished())
+            {
+                await _active2InactiveComplete.Task;
+                _active2InactiveComplete = new TaskCompletionSource<bool>(); 
+            }
             
             finishActive2InactiveEvent?.Invoke();
 
@@ -408,7 +407,11 @@ namespace FinTOKMAK.UIStackSystem.Runtime
             // Invoke the UnityEvent
             background2InactiveEvent?.Invoke();
 
-            await _background2InactiveComplete.Task;
+            if (!AllBackground2InactiveFinished())
+            {
+                await _background2InactiveComplete.Task;
+                _background2InactiveComplete = new TaskCompletionSource<bool>();
+            }
             
             finishBackground2InactiveEvent?.Invoke();
 

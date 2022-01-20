@@ -29,7 +29,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         public UINode<T> prev
         {
             get => _prev;
-            set => prev = value;
+            set => _prev = value;
         }
 
         public T value
