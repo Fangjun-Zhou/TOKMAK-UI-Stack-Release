@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -8,30 +9,55 @@ namespace FinTOKMAK.UIStackSystem.Runtime
     {
         #region Private Field
 
-        // TODO: Use some private data structure to manage the panel tabs.
+        private List<IUIPanelElement> _panelElements = new List<IUIPanelElement>();
+
+        private IUIPanelElement _currPanel;
 
         #endregion
 
         private void Awake()
         {
-            throw new NotImplementedException();
-        }
+            foreach (UIPanelElement panelElement in UIPanels)
+            {
+                _panelElements.Add(panelElement);
+                panelElement.OnInitialization();
+            }
 
-        private void Start()
-        {
-            throw new NotImplementedException();
+            if (useInitializePanel)
+            {
+                initializationPanel.OnInactive2Active();
+                _currPanel = initializationPanel;
+            }
         }
 
         #region IUITabManager Callback
         
         public void SwitchPanel(IUIPanelElement panel)
         {
-            throw new NotImplementedException();
+            if (_currPanel == panel)
+            {
+                Debug.Log("Panel already open.");
+                return;
+            }
+            
+            _currPanel.OnActive2Inactive();
+            panel.OnInactive2Active();
+
+            _currPanel = panel;
         }
 
         public async Task SwitchPanelAsync(IUIPanelElement panel)
         {
-            throw new NotImplementedException();
+            if (_currPanel == panel)
+            {
+                Debug.Log("Panel already open.");
+                return;
+            }
+            
+            await _currPanel.OnActive2InactiveAsync();
+            panel.OnInactive2Active();
+
+            _currPanel = panel;
         }
 
         #endregion
