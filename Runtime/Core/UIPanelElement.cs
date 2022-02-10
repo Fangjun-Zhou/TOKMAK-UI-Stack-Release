@@ -155,7 +155,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
                     // If all the event invoker has finish status, invoke the finishActive2Background in current panel.
                     if (AllActive2BackgroundFinished())
                     {
-                        _active2BackgroundComplete.SetResult(true);
+                        _active2BackgroundComplete.TrySetResult(true);
                         finishActive2Background?.Invoke();
                     }
                 };
@@ -202,7 +202,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
                     // If all the event invoker has finish status, invoke the finishActive2Inactive in current panel.
                     if (AllActive2InactiveFinished())
                     {
-                        _active2InactiveComplete.SetResult(true);
+                        _active2InactiveComplete.TrySetResult(true);
                         finishActive2Inactive?.Invoke();
                     }
                 };
@@ -249,7 +249,7 @@ namespace FinTOKMAK.UIStackSystem.Runtime
                     // If all the event invoker has finish status, invoke the finishBackground2Inactive in current panel.
                     if (AllBackground2InactiveFinished())
                     {
-                        _background2InactiveComplete.SetResult(true);
+                        _background2InactiveComplete.TrySetResult(true);
                         finishBackground2Inactive?.Invoke();
                     }
                 };
