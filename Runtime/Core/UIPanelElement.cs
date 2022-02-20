@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NaughtyAttributes;
+#if UNITY_EDITOR
+using UnityEditor.Events;
+#endif
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -444,9 +447,21 @@ namespace FinTOKMAK.UIStackSystem.Runtime
 
         #endregion
 
-        #region Debug
-
+        #region Quick Action
         
+        #if UNITY_EDITOR
+
+        [Button()]
+        public void ActiveSetup()
+        {
+            UnityEventTools.AddPersistentListener(inactive2ActiveEvent,
+                () =>
+                {
+                    gameObject.SetActive(true);
+                });
+        }
+        
+        #endif
 
         #endregion
     }
