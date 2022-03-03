@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using NaughtyAttributes;
 #if UNITY_EDITOR
+using UnityEditor;
 using UnityEditor.Events;
 #endif
 using UnityEngine;
@@ -448,17 +449,27 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         #endregion
 
         #region Quick Action
+
+        public void ActivateGameObject()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void DeactivateGameObject()
+        {
+            gameObject.SetActive(false);
+        }
         
         #if UNITY_EDITOR
 
         [Button()]
         public void ActiveSetup()
         {
-            UnityEventTools.AddPersistentListener(inactive2ActiveEvent,
-                () =>
-                {
-                    gameObject.SetActive(true);
-                });
+            // TODO: Change to methods.
+            UnityEventTools.AddPersistentListener(inactive2ActiveEvent, ActivateGameObject);
+            UnityEventTools.AddPersistentListener(active2InactiveEvent, DeactivateGameObject);
+            UnityEventTools.AddPersistentListener(background2InactiveEvent, DeactivateGameObject);
+            EditorUtility.SetDirty(this);
         }
         
         #endif
