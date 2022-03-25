@@ -467,8 +467,8 @@ namespace FinTOKMAK.UIStackSystem.Runtime
         {
             // TODO: Change to methods.
             UnityEventTools.AddPersistentListener(inactive2ActiveEvent, ActivateGameObject);
-            UnityEventTools.AddPersistentListener(active2InactiveEvent, DeactivateGameObject);
-            UnityEventTools.AddPersistentListener(background2InactiveEvent, DeactivateGameObject);
+            UnityEventTools.AddPersistentListener(finishActive2InactiveEvent, DeactivateGameObject);
+            UnityEventTools.AddPersistentListener(finishBackground2InactiveEvent, DeactivateGameObject);
             EditorUtility.SetDirty(this);
         }
         
