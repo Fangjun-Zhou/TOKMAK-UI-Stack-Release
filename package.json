@@ -1,6 +1,6 @@
 {
   "name": "com.fintokmak.tokmakuistack",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "displayName": "TOKMAK UI Stack",
   "description": "This is stack based UI management system developed by FinTOKMAK Studio.",
   "unity": "2020.3",

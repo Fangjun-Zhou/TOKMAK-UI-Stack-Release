@@ -6,7 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## 0.2.0 - 2021-07-15
+## 0.2.1 - 2022-05-30
+## Added
+- Added: DelayUIEventInvoker, await a small period and invoke the event.
+- Added: PanelOpeners
+- Added: GroupAnimPlayer
+- Added: AnimPlayer
+
+## Changed
+- Update: Core classes
+- Update: GroupAnimPlayer And AnimPlayer. Finish implement group anim playing.
+- Update: UIPanelElement. Added ActiveSetup quick action.
+- Update: UIPanelElement. Added Activate and Deactivate methods.
+- Update: UIPanelElement. Added listeners when panel finish action.
+
+## 0.2.0 - 2022-01-20
 ### Added
 - UI Stack Manager and UI Tab Manager for different UI structure management.
 - Universal Event System for UI event management.
